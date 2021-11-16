@@ -1,0 +1,105 @@
+/* colors */
+:root{
+  --primary-bg: #333644;
+  --secondery-bg: #324e7b;
+  --primary-color: #f0f0f0;
+  --secondery-color: #2B373C;
+  --item-color: #c65f63;
+}
+/* end colors */
+
+/* box model */
+:root{
+  --primary-padding: 1rem;
+  --secondery-padding: 2rem;
+  --section-margin: 4rem;
+  --primary-border: solid .1rem var(--secondery-bg);
+  --secondery-border: solid .1rem var(--primary-bg);
+  --box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+}
+/* end box model */
+
+// properties
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  line-height: 2;
+  font-family: sans-serif;
+  color: var(--primary-color);
+}
+
+img{
+  width: 100%;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  background-color: var(--primary-bg);
+}
+
+html{
+  overflow-x: hidden;
+}
+
+@mixin grid($grid-gap, $grid-columns) {
+  display: grid;
+  gap: $grid-gap;
+  grid-template-columns: repeat(auto-fill, minmax($grid-columns, 1fr));
+}
+
+.container{
+  margin: 0 auto;
+  width: 80%;
+  max-width: 50rem;
+}
+
+.section{
+  margin: var(--section-margin) auto;
+}
+
+%text-logo{
+  text-transform: uppercase;
+  &::first-letter{
+    color: var(--item-color);
+    text-transform: lowercase;
+    font-size: 2rem;
+  }
+}
+
+@import "button";
+// end properties
+
+.main-header{
+  background-color: var(--secondery-bg);
+  .container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .logo{
+      h1{
+        @extend %text-logo;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.main-footer{
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: wrap;
+    border-top: var(--primary-border);
+    padding: 1rem 0;
+  }
+}

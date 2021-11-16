@@ -1,0 +1,28 @@
+.link{
+  padding: .5rem 1rem;
+  border-radius: .5rem 1rem;
+}
+
+.primary-link{
+  background-color: var(--item-color);
+  color: var(--primary-color);
+  &:hover{
+    filter: brightness(80%);
+  }
+}
+
+.btn{
+  outline: none;
+  border: none;
+  border-radius: .5rem 1rem;
+  padding: .5rem 1rem;
+  // font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.primary-btn{
+  background-color: var(--item-color);
+  &:hover{
+    filter: brightness(80%);
+  }
+}

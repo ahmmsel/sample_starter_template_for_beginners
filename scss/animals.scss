@@ -1,0 +1,36 @@
+@import "base";
+
+.main-content{
+  .animals{
+    @include grid(5rem, 25rem);
+    .animal-item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--box-shadow);
+      border-radius: .8rem;
+      .content{
+        padding: 1.2rem;
+      }
+        img{
+          object-fit: cover;
+          height: 15rem;
+        }
+    }
+    .animal-item:nth-child(even){
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+@media (max-width: 514px) {
+  .main-content{
+    .animals{
+      @include grid(5rem, 15rem);
+      .animal-item:nth-child(n){
+        justify-content: center;
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
